@@ -3,7 +3,35 @@ body{
     justify-content: center;
 }
 
-.q-box{
+
+
+.start-display{
+    width: 600px;
+    height: 500px;
+    border-radius: 5px;
+    text-align: center;
+
+    background-color: bisque;
+}
+
+
+.start-quiz-btn{
+    position: relative;
+    top: 125px;
+    display: inline;
+    font-weight: bold;
+    background-color: brown;
+    border-radius: 3px;
+}
+
+.start-quiz-btn:hover{
+    cursor: pointer;
+}
+
+
+
+.question-display{
+    display: none;
     width: 600px;
     height: 500px;
     border-radius: 5px;
@@ -11,7 +39,7 @@ body{
     background-color: bisque;
 }
 
-.q-box h1{
+.question{
     margin: 25px;
     border-bottom-style: solid;
     border-bottom-width: 2px;
@@ -31,4 +59,20 @@ body{
     list-style-position: inside;
     margin-bottom: 10px;
     border-radius: 3px;
+}
+
+.answers li:hover{
+    cursor: pointer;
+}
+
+
+
+.score-display{
+    display: none;
+    width: 600px;
+    height: 500px;
+    border-radius: 5px;
+    text-align: center;
+
+    background-color: bisque;
 }
