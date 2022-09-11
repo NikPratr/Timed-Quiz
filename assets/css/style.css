@@ -5,13 +5,15 @@ body{
 
 
 
+
+
 .start-display{
     width: 600px;
     height: 500px;
     border-radius: 5px;
     text-align: center;
 
-    background-color: bisque;
+    background-color: bisque; 
 }
 
 
@@ -27,6 +29,8 @@ body{
 .start-quiz-btn:hover{
     cursor: pointer;
 }
+
+
 
 
 
@@ -63,6 +67,19 @@ body{
 
 .answers li:hover{
     cursor: pointer;
+}
+
+.question-display p {
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+#incorrect-message{
+    display: none;
+}
+
+#correct-message{
+    display: none;
 }
 
 
