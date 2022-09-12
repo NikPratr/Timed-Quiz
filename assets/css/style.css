@@ -4,7 +4,7 @@ body{
 }
 
 
-
+/* ---------------------- */
 
 
 .start-display{
@@ -31,7 +31,7 @@ body{
 }
 
 
-
+/* ---------------------- */
 
 
 .question-display{
@@ -43,10 +43,20 @@ body{
     background-color: bisque;
 }
 
-.question{
-    margin: 25px;
+section div{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+
+    
+    margin-left: 25px;
+    margin-right: 25px;
     border-bottom-style: solid;
     border-bottom-width: 2px;
+}
+
+div h4 {
+    white-space: nowrap;
 }
 
 .answers{
@@ -69,7 +79,7 @@ body{
     cursor: pointer;
 }
 
-.question-display p {
+.question-display p{
     border-top-style: solid;
     border-top-width: 1px;
 }
@@ -82,6 +92,8 @@ body{
     display: none;
 }
 
+
+/* ---------------------- */
 
 
 .score-display{

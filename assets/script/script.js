@@ -34,6 +34,8 @@ var a1           = document.querySelector("#a1");
 var a2           = document.querySelector("#a2");
 var a3           = document.querySelector("#a3");
 var a4           = document.querySelector("#a4");
+var correct      = document.querySelector("#correct-message");
+var incorrect    = document.querySelector("#incorrect-message");
 
 var currentQuestion;
 
@@ -58,13 +60,22 @@ function shownQuestion(){
 }
 
 function checkAnswerAndIterate(event) {
+    console.log(event.target.textContent)
+    console.log(questionArr[currentQuestion].answer)
+    if(event.target.textContent == questionArr[currentQuestion].answer) {
+        correct.style.display = "block";
+        incorrect.style.display = "none";
+    } else {correct.style.display = "none";
+            incorrect.style.display = "block";}
     //if correct add points maybe
     //if incorrect deduct time, possibly
 
-    currentQuestion++;
+     currentQuestion++;
     if(currentQuestion< questionArr.length) {
-        shownQuestion()
-    }
+         shownQuestion()
+     } else {
+
+     }
 }
 
 //this should happen on button press
