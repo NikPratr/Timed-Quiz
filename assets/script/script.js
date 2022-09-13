@@ -26,21 +26,31 @@ var questionArr = [
     },
 ]
 
-var sDisplay     = document.querySelector(".start-display");
-var qDisplay     = document.querySelector(".question-display");
-var question     = document.querySelector(".question");
-var startQuizBtn = document.querySelector(".start-quiz-btn");
-var a1           = document.querySelector("#a1");
-var a2           = document.querySelector("#a2");
-var a3           = document.querySelector("#a3");
-var a4           = document.querySelector("#a4");
-var correct      = document.querySelector("#correct-message");
-var incorrect    = document.querySelector("#incorrect-message");
+var sDisplay         = document.querySelector(".start-display");
+var qDisplay         = document.querySelector(".question-display");
+var eDisplay         = document.querySelector(".end-display");
+
+var question         = document.querySelector(".question");
+var startQuizBtn     = document.querySelector(".start-quiz-btn");
+var a1               = document.querySelector("#a1");
+var a2               = document.querySelector("#a2");
+var a3               = document.querySelector("#a3");
+var a4               = document.querySelector("#a4");
+var correct          = document.querySelector("#correct-message");
+var incorrect        = document.querySelector("#incorrect-message");
+var quizCountdown    = document.querySelector(".timer");
+var scoreEl          = document.querySelector("#score");
 
 var currentQuestion;
+var secondsRemaining = 59;
+var score            = 0;
 
-function changeDisplay() {
-    
+function timer() {
+    var timeInterval = setInterval(function () {
+        quizCountdown.textContent = "Time left: " + secondsRemaining;
+        secondsRemaining--;
+        console.log(secondsRemaining);
+    }, 1000)
 }
 
 function startQuiz() {
@@ -48,7 +58,7 @@ function startQuiz() {
     qDisplay.style.display = "block";
     currentQuestion=0;
     shownQuestion();
-    // timerStarts()
+    timer();
 }
 
 function shownQuestion(){
@@ -65,16 +75,20 @@ function checkAnswerAndIterate(event) {
     if(event.target.textContent == questionArr[currentQuestion].answer) {
         correct.style.display = "block";
         incorrect.style.display = "none";
+        score ++;
     } else {correct.style.display = "none";
-            incorrect.style.display = "block";}
-    //if correct add points maybe
-    //if incorrect deduct time, possibly
+            incorrect.style.display = "block";
+            secondsRemaining -= 5;
+            quizCountdown.textContent = "Time left: " + secondsRemaining;
+            }
 
      currentQuestion++;
-    if(currentQuestion< questionArr.length) {
-         shownQuestion()
-     } else {
-
+    if(currentQuestion < questionArr.length) {
+        shownQuestion()
+     } else if(currentQuestion >= questionArr.length || secondsRemaining <1) {
+        qDisplay.style.display = "none";
+        eDisplay.style.display = "flex";
+        scoreEl.textContent = "Your score: " + score
      }
 }
 
