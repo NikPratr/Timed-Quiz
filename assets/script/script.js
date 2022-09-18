@@ -202,13 +202,13 @@ function checkAnswerAndIterate(event) {
             }
 
      currentQuestion++;
-    if(currentQuestion < questionArr.length) {
-        shownQuestion()
-     } else if(currentQuestion >= questionArr.length || secondsRemaining <= 0) {
-        qDisplay.style.display = "none";
-        eDisplay.style.display = "flex";
-        scoreEl.textContent = "Your score: " + score
-     }
+     if (secondsRemaining <= 0 || currentQuestion >= questionArr.length) {
+        qDisplay.style.display = 'none';
+        eDisplay.style.display = 'flex';
+        scoreEl.textContent = 'Your score: ' + score;
+      } else if (currentQuestion < questionArr.length) {
+        shownQuestion();
+      }
 }
 
 startQuizBtn.addEventListener("click", function(event) {
