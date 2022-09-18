@@ -111,6 +111,14 @@ var questionArr = [
         choiceFour: "Khartoum",
         answer: "Khartoum"
     },
+    {
+        prompt: "What is the capital of Libya?",
+        choiceOne: "Tripoli",
+        choiceTwo: "Sirte",
+        choiceThree: "Benghazi",
+        choiceFour: "Khoms",
+        answer: "Tripoli"
+    }
 ]
 
 var sDisplay         = document.querySelector(".start-display");
