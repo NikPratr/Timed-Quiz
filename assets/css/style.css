@@ -120,16 +120,26 @@ body{
     margin: 0px;
 }
 
+.submit-score{
+font-weight: bold;
+background-color: brown;
+border-radius: 3px;
+}
 
 /* ---------------------- */
 
 
 .highscores-display{
     display: none;
+    align-content: center;
     flex-direction: column;
     width: 600px;
     height: 500px;
     border-radius: 5px;
 
     background-color: bisque;
+}
+
+#highscore-list li{
+    list-style: decimal;
 }
